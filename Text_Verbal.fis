@@ -1,0 +1,55 @@
+[System]
+Name='BcoRobot'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=2
+NumRules=9
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='ev'
+Range=[-1 1]
+NumMFs=3
+MF1='N':'trapmf',[-1.72 -1.08 -0.664 0.0555555555555554]
+MF2='Z':'trimf',[-0.357 0 0.404761904761905]
+MF3='P':'trapmf',[-0.097883597883598 0.526 1.08 1.72]
+
+[Input2]
+Name='ew'
+Range=[-1 1]
+NumMFs=3
+MF1='N':'trapmf',[-1.72 -1.08 -0.685 -0.468253968253968]
+MF2='Z':'trimf',[-0.733 0 0.0502645502645502]
+MF3='P':'trapmf',[-0.0343915343915345 0.177 1.08 1.72]
+
+[Output1]
+Name='T1'
+Range=[-1 1]
+NumMFs=3
+MF1='N':'trimf',[-0.619341563786008 -0.31 -0.2]
+MF2='Z':'trimf',[-0.177 -0.0291 0.360082304526749]
+MF3='P':'trimf',[0.38477366255144 0.907 1.8]
+
+[Output2]
+Name='T2'
+Range=[-1 1]
+NumMFs=3
+MF1='N':'trimf',[-1 -0.689 -0.351851851851852]
+MF2='Z':'trimf',[-0.32716049382716 0.00529 0.245]
+MF3='P':'trimf',[0.224279835390947 0.73 1.2]
+
+[Rules]
+1 1, 1 1 (1) : 1
+1 2, 1 2 (1) : 1
+1 3, 1 3 (1) : 1
+2 1, 2 1 (1) : 1
+2 2, 2 2 (1) : 1
+2 3, 2 3 (1) : 1
+3 1, 3 1 (1) : 1
+3 2, 3 2 (1) : 1
+3 3, 3 3 (1) : 1
